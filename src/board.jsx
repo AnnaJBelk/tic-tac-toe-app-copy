@@ -1,8 +1,19 @@
 import { useState } from "react";
 
 const Square = ({ id }) => {
+  const [color, setColor] = useState("green");
+  const palet = ["red", "blue", "green"];
+  const getRandomColor = () => palet[Math.floor(Math.random() * 3)];
+
   return (
-    <button>
+    <button
+      onClick={(event) => {
+        event.stopPropagation();
+        const newColor = getRandomColor();
+        setColor(newColor);
+        event.target.style.backgroundColor = newColor;
+      }}
+    >
       <h1>{id}</h1>
     </button>
   );
@@ -18,7 +29,7 @@ const Board = () => {
       className="game-board"
       onClick={(event) => {
         setPlayer((prevPlayer) => (prevPlayer ? 0 : 1));
-        event.target.style.background = "red";
+        event.currentTarget.style.background = "red";
         event.target.style.width = "200px";
         event.target.style.height = "200px";
       }}

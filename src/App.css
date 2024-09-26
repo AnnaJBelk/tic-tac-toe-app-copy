@@ -2,6 +2,12 @@ button {
   background-color: #0c80f3;
   border: 6px solid #0ff166;
   border-radius: 10px;
+  width: 100%; /* Make button take full width of the square */
+  height: 100%; /* Make button take full height of the square */
+  padding: 0; /* No padding for full area clicks */
+  display: flex; /* Center the text */
+  align-items: center; /* Center text vertically */
+  justify-content: center; /* Center text horizontally */
 }
 .game-board {
   width: 600px;
