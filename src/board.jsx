@@ -1,13 +1,17 @@
 import { useState } from "react";
 
-const Square = () => {
-  return <button></button>;
+const Square = ({ id }) => {
+  return (
+    <button>
+      <h1>{id}</h1>
+    </button>
+  );
 };
 
 const Board = () => {
   const [player, setPlayer] = useState(1);
 
-  const renderSquare = (i) => <Square></Square>;
+  const renderSquare = (i) => <Square id={i}></Square>;
 
   return (
     <div
